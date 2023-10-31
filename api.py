@@ -39,8 +39,10 @@ def getParams(url):
 ##end
 
 class eventserver:
+    Schedules=[]
     def createSchedule(name):
         class newSchedule:
+            Name=name
             Events=[]
             def append(data):
                 if (data!=None):
@@ -48,5 +50,7 @@ class eventserver:
                 ##endif
             ##end
         ##end
+        eventserver.Schedules.append(newSchedule)
+        return schedule
     ##end
 ##end
