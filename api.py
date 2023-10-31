@@ -47,6 +47,27 @@ class eventserver:
             def append(data):
                 if (data!=None):
                     newSchedule.Events.append(data)
+                else:
+                    eventserver.error("'data' was null!")
+                ##endif
+            ##end
+            def addEvent(name,weight,script):
+                if (name!=None):
+                    weight=weight || 0
+                    script=script || None
+                    if (script!=None):
+                        class data:
+                            Name=name
+                            Weight=weight
+                            Script=script
+                        ##end
+                        newSchedule.append(data)
+                        return data
+                    else:
+                        eventserver.error("You must provide a valid JSON Value for property 'SourceScript'!")
+                    ##endif
+                else:
+                    eventserver.error("You must provide a valid JSON Value for property 'Name'!")
                 ##endif
             ##end
         ##end
