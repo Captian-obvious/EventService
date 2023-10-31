@@ -74,4 +74,15 @@ class eventserver:
         eventserver.Schedules.append(newSchedule)
         return schedule
     ##end
+    def getScheduleFromName(name):
+        sched=eventserver.Schedules
+        if (len(sched)>0):
+            for i in range(len(sched)):
+                if (sched[i] and sched[i].Name==name):
+                    break
+                    ret=sched[i]
+                ##endif
+            ##end
+        ##endif
+    ##end
 ##end
