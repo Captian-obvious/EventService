@@ -29,3 +29,24 @@ def index():
 </html>
  """
 ##end
+#Server stuff
+def getParams(url):
+    if (len(url.split('?'))>1):
+        query=url.split('?')[1]
+        params=query.split('&')
+        return params
+    ##endif
+##end
+
+class eventserver:
+    def createSchedule(name):
+        class newSchedule:
+            Events=[]
+            def append(data):
+                if (data!=None):
+                    newSchedule.Events.append(data)
+                ##endif
+            ##end
+        ##end
+    ##end
+##end
