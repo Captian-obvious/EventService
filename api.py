@@ -70,12 +70,26 @@ class eventserver:
                     eventserver.error("You must provide a valid JSON Value for property 'Name'!")
                 ##endif
             ##end
+            def getEventFromName(name):
+                evs=newSchedule.Events
+                ret=None
+                if (len(evs)>0):
+                    for i in range(evs):
+                        if (evs[i] and evs[i].Name==name):
+                            break
+                            ret = evs[i]
+                        ##endif
+                    ##end
+                ##endif
+                return ret
+            ##end
         ##end
         eventserver.Schedules.append(newSchedule)
-        return schedule
+        return newSchedule
     ##end
     def getScheduleFromName(name):
         sched=eventserver.Schedules
+        ret=None
         if (len(sched)>0):
             for i in range(len(sched)):
                 if (sched[i] and sched[i].Name==name):
@@ -84,5 +98,6 @@ class eventserver:
                 ##endif
             ##end
         ##endif
+        return ret
     ##end
 ##end
