@@ -64,10 +64,10 @@ class eventserver:
                         newSchedule.append(data)
                         return data
                     else:
-                        eventserver.error("You must provide a valid JSON Value for property 'SourceScript'!")
+                        return eventserver.error("You must provide a valid JSON Value for property 'SourceScript'!","prop_invalid")
                     ##endif
                 else:
-                    eventserver.error("You must provide a valid JSON Value for property 'Name'!")
+                    return eventserver.error("You must provide a valid JSON Value for property 'Name'!","prop_invalid")
                 ##endif
             ##end
             def getEventFromName(name):
@@ -108,5 +108,6 @@ class eventserver:
                 "CompletedStatus":False,
             }
             return jsonify(errMsg)
+        ##endif
     ##end
 ##end
