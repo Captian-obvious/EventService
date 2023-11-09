@@ -3,7 +3,9 @@ import os,requests,robloxapi,sys,time
 from api import app,jsonify,request
 #class errors
 def getErrorCodeFromString(string):
-    if (string=='invalid_input'):
-        
+    errCode=None
+    if (string=='prop_invalid'):
+        errCode=271
     ##endif
+    return errCode
 ##end
