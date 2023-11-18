@@ -3,7 +3,7 @@ import errors,os,sys,requests,robloxapi
 from flask import Flask, requests, jsonify
 #Define app
 app=Flask(__name__)
-#Defibe views.
+#Define views.
 
 # DYNAMIC PAGES
 @app.route('/')
